@@ -17,11 +17,15 @@ import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import home from "./pages/home";
 import login from "./pages/login";
 import signup from "./pages/signup";
+import user from "./pages/user";
 
 // components
-import NavBar from "./components/Navbar";
+import NavBar from "./components/layout/Navbar";
 import AuthRoute from "./util/AuthRoute";
 import axios from "axios";
+
+axios.defaults.baseURL =
+  "https://us-central1-socialape-9fa37.cloudfunctions.net/api";
 
 const theme = createMuiTheme(themeFile);
 
@@ -51,6 +55,12 @@ function App() {
               <Route exact path="/" component={home} />
               <AuthRoute exact path="/login" component={login} />
               <AuthRoute exact path="/signup" component={signup} />
+              <Route exact path="/users/:handle" component={user} />
+              <Route
+                exact
+                path="/users/:handle/scream/:screamId"
+                component={user}
+              />
             </Switch>
           </div>
         </Router>

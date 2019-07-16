@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 
 // Redux
 import { connect } from "react-redux";
-import { likeScream, unLikeScream } from "../redux/actions/dataActions";
+import { likeScream, unLikeScream } from "../../redux/actions/dataActions";
 
 // Components
-import MyButton from "../util/MyButton";
+import MyButton from "../../util/MyButton";
 
 // Icons
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
